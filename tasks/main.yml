@@ -4,3 +4,12 @@
     url: "{{ repo_url }}"
     dest: "{{ repo_dir }}"
     mode: 0755
+
+- name: add repo_dir to path
+  lineinfile:
+    dest: /etc/environment
+    state: present
+    regexp: 'PATH='
+    line: 'PATH=/bin:/usr/bin:/usr/local/bin'
+  when: ansible_distribution == 'NA'
+
