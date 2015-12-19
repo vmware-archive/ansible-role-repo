@@ -1,6 +1,7 @@
 # ansible-role-repo
 
-Ansible playbook to automate installing Google repo.
+Ansible playbook to automate installing
+[Google repo](https://code.google.com/p/git-repo/).
 
 ## Requirements
 
@@ -10,15 +11,17 @@ None (other than Ansible).
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    repo_url: [https://storage.googleapis.com/git-repo-downloads/repo](https://storage.googleapis.com/git-repo-downloads/repo)
+```yaml
+# The URL from which to get the repo utility.
+repo_url: https://storage.googleapis.com/git-repo-downloads/repo
 
-The URL from which to get the repo utility.
-
-    repo_dir: /usr/local/bin
-
-The directory into which to place the repo tool. This should be on your PATH as the role does not add the directory thereto.
+# The directory into which to place the repo tool.
+# This should be on your PATH as the role does not add the directory thereto.
+repo_dir: /usr/local/bin
+```
 
 ## Example playbook
+
 ```
 ---
 - hosts: developers
